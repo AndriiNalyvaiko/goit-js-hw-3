@@ -1,25 +1,20 @@
 
-function formatMessage(message, maxLength) {
-  if
-    (message.length <= maxLength)
-  {
-    return message;
-  }
-  else {
-    return message.slice(0, maxLength) + "...";
-  }
+function makeArray(firstArray, secondArray, maxLength) {
+
+    const totalArray = firstArray.concat(secondArray);
+
+    if (totalArray.length > maxLength) {
+
+        return totalArray.slice(0, maxLength);
+
+    }
+    else return totalArray;
 }
 
 
-const result1 = formatMessage("Curabitur ligula sapien", 16);
-console.log(result1); 
-const result2 = formatMessage("Curabitur ligula sapien", 23);
-console.log(result2); 
-const result3 = formatMessage("Vestibulum facilisis purus nec", 20);
-console.log(result3); 
-const result4 = formatMessage("Vestibulum facilisis purus nec", 30);
-console.log(result4); 
-const result5 = formatMessage("Nunc sed turpis a felis in nunc fringilla", 15);
-console.log(result5); 
-const result6 = formatMessage("Nunc sed turpis a felis in nunc fringilla", 41);
-console.log(result6); 
+console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3));
+console.log(makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4));
+console.log(makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3));
+console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2)); 
+console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4));
+console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0)); 
